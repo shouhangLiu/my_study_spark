@@ -1,0 +1,30 @@
+server:
+  port: 9997
+spring:
+  main:
+    banner-mode: console
+    allow-bean-definition-overriding: true
+  datasource:
+      name: primary
+      type: com.zaxxer.hikari.HikariDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.168.123.5:30471/sls-esm-dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+      username: root
+      password: 1qaz2wsx
+  hikari:
+      minimum-idle: 10
+      maximum-pool-size: 50
+      auto-commit: false
+      connection-test-query: select 1
+      leak-detection-threshold: 300000
+      max-lifetime: 3600000
+  data:
+    jpa:
+      repositories:
+        enabled: true
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update

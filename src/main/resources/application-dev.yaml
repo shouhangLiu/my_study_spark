@@ -28,3 +28,5 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: update
+logging:
+  config: classpath:logback.xml
